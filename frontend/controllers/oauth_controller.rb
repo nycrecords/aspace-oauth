@@ -39,8 +39,8 @@ class OauthController < ApplicationController
     backend_session = nil
 
     uid = auth_hash.uid
-    email = user_json["email"]
-    username = user_json["email"]
+    email = user_json["email"].downcase
+    username = user_json["email"].downcase
     guid = user_json["id"]
     puts "Received callback for: [uid: #{uid}], [email: #{email}]"
 
