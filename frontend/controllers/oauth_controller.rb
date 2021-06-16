@@ -75,6 +75,7 @@ class OauthController < ApplicationController
 
   def saml_logout
     reset_session
+    response.headers['Clear-Site-Data'] = '"*"'
     redirect_to AspaceOauth.saml_logout_url
   end
 
